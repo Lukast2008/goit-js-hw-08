@@ -9,7 +9,7 @@ const save = (key, value) => {
 
 const load = key => {
   try {
-    serializedState = localStorage.getItem(key);
+    const serializedState = localStorage.getItem(key);
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
     console.log('Get state error: ', error.message);

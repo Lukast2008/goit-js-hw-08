@@ -9,7 +9,7 @@ const CONTACT_FORM_KEY = 'feedback-form-state';
 const fillContactFild = form => {
   const { elements: contactFormEl } = form;
 
-  const formData = localstorageApi.load(CONTACT_FORM_KEY);
+  const formData = localStorageApi.load(CONTACT_FORM_KEY);
 
   if (!formData) {
     return;
