@@ -3,7 +3,7 @@ const save = (key, value) => {
     const serializedState = JSON.stringify(value);
     localStorage.setItem(key, serializedState);
   } catch (error) {
-    console.error('set state error: ', error.message);
+    console.log('set state error: ', error.message);
   }
 };
 
@@ -12,7 +12,7 @@ const load = key => {
     serializedState = localStorage.getItem(key);
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
-    console.error('get state error: ', error.message);
+    console.log('get state error: ', error.message);
   }
 };
 
