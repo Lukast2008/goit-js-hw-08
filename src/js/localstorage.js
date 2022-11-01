@@ -29,5 +29,3 @@ export default {
   load,
   remove,
 };
-
-//done
