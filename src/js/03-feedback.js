@@ -1,6 +1,6 @@
 'use strict';
 import throttle from 'lodash.throttle';
-import localstorageApi from './localstorage';
+import localStorageApi from './localstorage';
 
 const getEmailValue = document.querySelector('.feedback-form');
 
@@ -26,17 +26,17 @@ const handeleEmeilForm = throttle(({ target }) => {
   const contactFormElementName = target.name;
   const contactFormElementValue = target.value;
 
-  const formData = localstorageApi.load(CONTACT_FORM_KEY) || {};
+  const formData = localStorageApi.load(CONTACT_FORM_KEY) || {};
 
   formData[contactFormElementName] = contactFormElementValue;
   console.log(contactFormElementName, contactFormElementValue);
-  localstorageApi.save(CONTACT_FORM_KEY, formData);
+  localStorageApi.save(CONTACT_FORM_KEY, formData);
 }, 500);
 
 const hendlContactFormSubmit = event => {
   event.preventDefault();
   event.target.reset();
-  localstorageApi.remove(CONTACT_FORM_KEY);
+  localStorageApi.remove(CONTACT_FORM_KEY);
 };
 
 getEmailValue.addEventListener('input', handeleEmeilForm);
